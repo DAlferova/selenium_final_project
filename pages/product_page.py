@@ -19,7 +19,8 @@ class ProductPage(BasePage):
     def book_name_is_in_message(self):
         book_name = self.browser.find_element(*ProductPageLocators.BOOK_NAME).text
         message_book_is_added = self.browser.find_element(*ProductPageLocators.MESSAGE_TEXT).text
-        assert book_name in message_book_is_added, f"No book name '{book_name}' in the message:{message_book_is_added}"
+        assert book_name == message_book_is_added, f"The book name '{book_name}' is not equal to the name " \
+                                                   f"in the message:{message_book_is_added}"
 
     def cost_basket_equal_to_price(self):
         cost_basket = self.browser.find_element(*ProductPageLocators.COST_BASKET).text
