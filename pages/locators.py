@@ -16,3 +16,4 @@ class ProductPageLocators:
     MESSAGE_TEXT = (By.CSS_SELECTOR, ".alertinner strong")
     COST_BASKET = (By.CSS_SELECTOR, ".basket-mini")
     BOOK_PRICE = (By.CSS_SELECTOR, ".product_main>p")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alertinner")
