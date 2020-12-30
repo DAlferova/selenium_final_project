@@ -61,3 +61,17 @@ class BasePage:
     def should_be_login_link(self):
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
 
+    def go_to_basket_page(self):
+        link = self.browser.find_element(*BasePageLocators.BASKET_LINK)
+        link.click()
+
+    def should_be_message_about_empty_basket(self):
+        basket_message = self.browser.find_element(*BasePageLocators.BASKET_EMPTY_MESSAGE).text
+        assert basket_message == "Your basket is empty. Continue shopping",\
+            "The message about empty basket is not found. " \
+            "Expected:*Your basket is empty.*" \
+            f"The message on the page:*{basket_message}*"
+
+    def should_be_empty_basket(self):
+        assert self.is_not_element_present(*BasePageLocators.BASKET_ITEMS), "The basket is not empty"
+
