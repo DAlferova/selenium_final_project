@@ -11,9 +11,7 @@ class ProductPage(BasePage):
         basket_button.click()
 
     def check_item_is_added_to_basket(self):
-        # check the message
         self.book_name_is_in_message()
-        # check the price
         self.cost_basket_equal_to_price()
 
     def book_name_is_in_message(self):

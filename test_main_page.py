@@ -1,4 +1,6 @@
 """
+The variants of run:
+pytest -v --tb=line --language=en test_main_page.py
 pytest -v --tb=line --language=en test_main_page.py::test_guest_cant_see_product_in_basket_opened_from_main_page
 pytest -v --tb=line --language=en -m login_guest test_main_page.py
 """
